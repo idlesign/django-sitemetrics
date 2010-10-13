@@ -1,7 +1,7 @@
 {% for keycode in keycodes %}
 	{% ifequal keycode.provider "yandex" %}
 		<script src="//mc.yandex.ru/metrika/watch.js" type="text/javascript"></script>
-		<div style="display:none;"><script type="text/javascript">try { var yaCounter{{ keycode.keycode }} = new Ya.Metrika({{ keycode.keycode }}); } catch(e){}</script></div>
+		<div style="display:none;"><script type="text/javascript">try { var yaCounter{{ keycode.keycode }} = new Ya.Metrika({{ keycode.keycode }}); yaCounter{{ keycode.keycode }}.clickmap(); yaCounter{{ keycode.keycode }}.trackLinks({external: true}); } catch(e){}</script></div>
 		<noscript><div style="position:absolute"><img src="//mc.yandex.ru/watch/{{ keycode.keycode }}" alt="" /></div></noscript>
 	{% endifequal %}
 	{% ifequal keycode.provider "google" %}
