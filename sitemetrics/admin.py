@@ -1,5 +1,6 @@
-from sitemetrics.models import Keycode
 from django.contrib import admin
+
+from models import Keycode
 
 class KeycodeAdmin(admin.ModelAdmin):
     list_display = ('site', 'provider', 'keycode', 'active',)
