@@ -2,14 +2,15 @@ import os
 from setuptools import setup
 from sitemetrics import VERSION
 
+
 f = open(os.path.join(os.path.dirname(__file__), 'README.rst'))
 readme = f.read()
 f.close()
 
 setup(
     name='django-sitemetrics',
-    version=".".join(map(str, VERSION)),
-    description='This reusable Django app can help you to site metrics (Yandex Metrika, Google Analytics)',
+    version='.'.join(map(str, VERSION)),
+    description='Reusable application for Django providing easy means to integrate site metrics js into your sites',
     long_description=readme,
     author="Igor 'idle sign' Starikov",
     author_email='idlesign@yandex.ru',
@@ -19,13 +20,12 @@ setup(
     install_requires=['setuptools'],
     zip_safe=False,
     classifiers=[
-	'Development Status :: 4 - Beta',
+        'Development Status :: 4 - Beta',
         'Environment :: Web Environment',
         'Framework :: Django',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: BSD License',
         'Operating System :: OS Independent',
-        'Programming Language :: Python',
-
+        'Programming Language :: Python'
     ],
 )
