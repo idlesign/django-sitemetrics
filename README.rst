@@ -26,8 +26,8 @@ Built-in site metrics providers
 How to use
 ----------
 
-1. Add the 'sitemetrics' application to 'INSTALLED_APPS' in your settings file (usually 'settings.py')
-2. Add '{% load sitemetrics %}' tag to the top of a template (usually base template, e.g. '_base.html')
+1. Add the `sitemetrics` application to `INSTALLED_APPS` in your settings file (usually `settings.py`)
+2. Add `{% load sitemetrics %}` tag to the top of a template (usually base template, e.g. `_base.html`)
 
 Then you have two options to add metrics counter code to your page:
 
