@@ -61,7 +61,10 @@ def sitemetrics(parser, token):
     _kcodes = []
     for kcode_data in kcodes:
         if kcode_data['provider'] in PROVIDERS_BY_ALIAS:
-            kcode_data['tpl'] = PROVIDERS_BY_ALIAS[kcode_data['provider']].get_template_name()
+            p_cls = PROVIDERS_BY_ALIAS[kcode_data['provider']]
+            kcode_data['tpl'] = p_cls.get_template_name()
+            # Get counter parameters.
+            kcode_data.update(p_cls.get_params())
             _kcodes.append(kcode_data)
 
     return sitemetricsNode(_kcodes)
