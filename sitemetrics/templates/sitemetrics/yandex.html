@@ -1,14 +1,15 @@
-<div style="display:none;"><script type="text/javascript">
-(function(w, c) {
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function (d, w, c) {
     (w[c] = w[c] || []).push(function() {
-    try {
-        w.yaCounter{{ keycode.keycode }} = new Ya.Metrika({{ keycode.keycode }});
-         yaCounter{{ keycode.keycode }}.clickmap(true);
-         yaCounter{{ keycode.keycode }}.trackLinks(true);
-
-    } catch(e) {}
+        try {w.yaCounter{{ keycode.keycode }} = new Ya.Metrika({
+            id:{{ keycode.keycode }}{% if keycode.webvisor %}, webvisor:true{% endif %}{% if keycode.clickmap %}, clickmap:true{% endif %}{% if keycode.track_links %}, trackLinks:true{% endif %}{% if keycode.accurate_bounce %}, accurateTrackBounce:true{% endif %}{% if keycode.no_index %}, ut: 'noindex'{% endif %}{% if keycode.track_hash %}, trackHash: true{% endif %}{% if keycode.user_params %}, params: { {{ keycode.user_params }} }{% endif %}
+        });} catch(e) { }
     });
-})(window, 'yandex_metrika_callbacks');
-</script></div>
-<script src="//mc.yandex.ru/metrika/watch.js" type="text/javascript" defer="defer"></script>
-<noscript><div style="position:absolute"><img src="//mc.yandex.ru/watch/{{ keycode.keycode }}" alt="" /></div></noscript>
+    var n = d.getElementsByTagName('script')[0], s = d.createElement('script'), f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = 'text/javascript'; s.async = true; s.src = (d.location.protocol=='https:' ? 'https:': 'http:') + '//mc.yandex.ru/metrika/watch.js';
+    if (w.opera=='[object Opera]') {d.addEventListener('DOMContentLoaded', f, false);} else { f(); }
+})(document, window, 'yandex_metrika_callbacks');
+</script>
+{% if not keycode.xml %}<noscript><div><img src="//mc.yandex.ru/watch/{{ keycode.keycode }}" style="position:absolute; left:-9999px;" alt="" /></div></noscript>{% endif %}
+<!-- /Yandex.Metrika counter -->
