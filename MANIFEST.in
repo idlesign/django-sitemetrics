@@ -1,4 +1,6 @@
 include README.rst
+include LICENSE
+include CHANGELOG
 recursive-include sitemetrics/locale *
 recursive-include sitemetrics/templates *
 recursive-include sitemetrics/templatetags *

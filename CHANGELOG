@@ -1,0 +1,23 @@
+v0.4.0
+------
++ Remastered API.
++ Added parameterization support for metrics counters.
++ Implemented all known parameters for Yandex Metrika.
+* Now uses built-in Django Cache framework.
+
+
+v0.3.0
+------
++ Added non-blocking js for Yandex Metrika.
+
+
+v0.2.0
+------
++ Added pypi support.
++ Added keycodes caching.
++ Added click map and external links tracking functionality for Yandex Metrika.
+
+
+v0.1.0
+------
++ Basic functionality.
