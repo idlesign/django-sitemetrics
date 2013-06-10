@@ -6,7 +6,7 @@ http://github.com/idlesign/django-sitemetrics
 What's that
 -----------
 
-django-sitemetrics is a reusable application for Django 1.1+ that offers easy integration with different site metrics service providers.
+Reusable application for Django providing easy means to integrate site metrics counters into your sites
 
 
 
