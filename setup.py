@@ -10,7 +10,7 @@ f.close()
 setup(
     name='django-sitemetrics',
     version='.'.join(map(str, VERSION)),
-    description='Reusable application for Django providing easy means to integrate site metrics js into your sites',
+    description='Reusable application for Django providing easy means to integrate site metrics counters into your sites',
     long_description=readme,
     author="Igor 'idle sign' Starikov",
     author_email='idlesign@yandex.ru',
@@ -26,6 +26,10 @@ setup(
         'Intended Audience :: Developers',
         'License :: OSI Approved :: BSD License',
         'Operating System :: OS Independent',
-        'Programming Language :: Python'
+        'Programming Language :: Python',
+        'Programming Language :: Python :: 2',
+        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.3',
     ],
 )
