@@ -17,7 +17,6 @@ setup(
     url='http://github.com/idlesign/django-sitemetrics',
     packages=['sitemetrics'],
     include_package_data=True,
-    install_requires=['setuptools'],
     zip_safe=False,
     classifiers=[
         'Development Status :: 4 - Beta',
