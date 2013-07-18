@@ -1,3 +1,8 @@
+v0.4.1
+------
+* Fixed setup.py PIP related issue (see #2).
+
+
 v0.4.0
 ------
 + Remastered API.
