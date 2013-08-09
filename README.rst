@@ -2,6 +2,9 @@ django-sitemetrics
 ==================
 http://github.com/idlesign/django-sitemetrics
 
+.. image:: https://pypip.in/d/django-sitemetrics/badge.png
+        :target: https://crate.io/packages/django-sitemetrics
+
 
 What's that
 -----------
