@@ -44,7 +44,7 @@ def sitemetrics(parser, token):
 
         cached = cache.get('sitemetrics')
         if not cached or current_site.id not in cached['keycodes']:
-            kcodes = current_site.keycode_set.filter(active=True)
+            kcodes = current_site.keycode_set.filter(active=True).values()
             cache.set('sitemetrics', {'keycodes': {current_site.id: kcodes}}, CACHE_TIMEOUT)
         else:
             kcodes = cached['keycodes'][current_site.id]
