@@ -1,3 +1,9 @@
+v0.4.2
+------
+* Fixed `kcode_data is not a dict` error (see #3).
+* Updated Google Analytics counter code (closes #4).
+
+
 v0.4.1
 ------
 * Fixed setup.py PIP related issue (see #2).
