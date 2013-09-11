@@ -15,7 +15,7 @@ functionality by customizing class attributes values.
 Let' try and customize the built-in `Yandex Metrics` counter:
 
 1. First, we define our new customized class somewhere within your project,
-   (let's say, `my_counters.py` inside `my_app` application)::
+   (let's say, `my_counters.py` inside `my_app` application):
 
    .. code-block:: python
      
@@ -33,7 +33,7 @@ Let' try and customize the built-in `Yandex Metrics` counter:
 
            
 2. Second, we introduce our class to Django, putting `SITEMETRICS_PROVIDERS` tuple 
-   into projects' `settings.py`::
+   into projects' `settings.py`:
 
     .. code-block:: python
         
@@ -46,7 +46,7 @@ Implementing new metrics providers
 ----------------------------------
 
 1. Implement a class describing counter aspects, somewhere within your project,
-   (let's say, `my_metrics.py` inside `my_app` application)::
+   (let's say, `my_metrics.py` inside `my_app` application):
 
    .. code-block:: python
      
@@ -66,7 +66,7 @@ Implementing new metrics providers
 
 2. Create a counter template (**sitemetrics** will search for it in`{your_app}/templates/sitemetrics/{provider_alias}.html`).
    
-   `keycode` variable will be available within this template. `keycode.keycode` will contain counter identifier::
+   `keycode` variable will be available within this template. `keycode.keycode` will contain counter identifier:
 
    .. code-block:: html
 
