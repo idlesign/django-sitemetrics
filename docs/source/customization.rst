@@ -35,11 +35,11 @@ Let' try and customize the built-in `Yandex Metrics` counter:
 2. Second, we introduce our class to Django, putting `SITEMETRICS_PROVIDERS` tuple 
    into projects' `settings.py`:
 
-    .. code-block:: python
+   .. code-block:: python
         
-        # Below is a tuple with classes paths to your metrics counters classes.
-        # We have just one.
-        SITEMETRICS_PROVIDERS = ('my_app.my_counters.MyYandexProvider',)
+       # Below is a tuple with classes paths to your metrics counters classes.
+       # We have just one.
+       SITEMETRICS_PROVIDERS = ('my_app.my_counters.MyYandexProvider',)
 
 
 Implementing new metrics providers
@@ -77,7 +77,8 @@ Implementing new metrics providers
             my_param_2 is {{ keycode.my_param_2 }}
         {% endif %}
 
-    The code above is of course not a real counter code, yet it can give you an idea on how to create a real one.
+
+   The code above is of course not a real counter code, yet it can give you an idea on how to create a real one.
 
 3. Now if you want to see your counter built into the **sitemetrics** fire an issue or a pull request at https://github.com/idlesign/django-sitemetrics/ or if you want to keep it private use `SITEMETRICS_PROVIDERS` definition approach (described in the previous section) to introduce your class to your Django project.
 
