@@ -18,11 +18,11 @@ Built-in site metrics providers
 
 1. **Yandex Metrika** — http://metrika.yandex.ru/
 
-    Provider alias: 'yandex'
+    Provider alias: `yandex`
 
 2. **Google Analytics** — http://www.google.com/analytics/
 
-    Provider alias: 'google'
+    Provider alias: `google`
 
 
 
@@ -41,7 +41,7 @@ Then you have two options to add metrics counter code to your page:
   {% sitemetrics by google for "UA-000000-0" %}
 
 
-  Here: `google` - provider alias; `UA-000000-0` - keycode argument.
+  Here: `google` is a metrics provider alias; `UA-000000-0` - metrics counter keycode.
 
   That is how you put Google Analytics counter code (with 'UA-000000-0' keycode) into page.
 
@@ -61,3 +61,9 @@ Then you have two options to add metrics counter code to your page:
 
   Use **./manage.py syncdb** to install sitemetrics tables into your database.
 
+
+
+Documentation
+-------------
+
+http://django-sitemetrics.readthedocs.org/
