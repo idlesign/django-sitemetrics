@@ -67,3 +67,8 @@ Documentation
 -------------
 
 http://django-sitemetrics.readthedocs.org/
+
+
+
+.. image:: https://d2weczhvl823v0.cloudfront.net/idlesign/django-sitemetrics/trend.png
+        :target: https://bitdeli.com/free
