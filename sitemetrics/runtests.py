@@ -1,14 +1,28 @@
-#!/usr/bin/env python
+#! /usr/bin/env python
+import sys
+import os
+
 from django.conf import settings
-from django.core.management import call_command
 
 
-if not settings.configured:
-    settings.configure(
-        INSTALLED_APPS=( 'django.contrib.sites', 'sitemetrics'),
-        DATABASES={'default': {'ENGINE': 'django.db.backends.sqlite3'}},
-    )
+APP_NAME = 'sitemetrics'
+
+
+def main():
+    sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+
+    if not settings.configured:
+        settings.configure(
+            INSTALLED_APPS=( 'django.contrib.sites', APP_NAME),
+            DATABASES={'default': {'ENGINE': 'django.db.backends.sqlite3'}},
+        )
+
+    from django.test.utils import get_runner
+    runner = get_runner(settings)()
+    failures = runner.run_tests((APP_NAME,))
+
+    sys.exit(failures)
 
 
 if __name__ == '__main__':
-    call_command('test', 'sitemetrics')
+    main()
