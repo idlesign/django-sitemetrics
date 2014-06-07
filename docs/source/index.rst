@@ -27,7 +27,7 @@ Table of Contents
 
 
 Get involved into django-sitemetrics
----------------------------------
+------------------------------------
 
 **Submit issues.** If you spotted something weird in application behavior or want to propose a feature you can do that at https://github.com/idlesign/django-sitemetrics/issues
 
@@ -38,7 +38,7 @@ Get involved into django-sitemetrics
 **Spread the word.** If you have some tips and tricks or any other words in mind that you think might be of interest for the others — publish them.
 
 
-The tip
--------
+Also
+----
 
 If the application is not what you want for site metrics, you might be interested in considering the other choices — https://www.djangopackages.com/grids/g/analytics/

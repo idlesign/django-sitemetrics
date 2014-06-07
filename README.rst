@@ -2,6 +2,9 @@ django-sitemetrics
 ==================
 http://github.com/idlesign/django-sitemetrics
 
+.. image:: https://badge.fury.io/py/django-sitemetrics.png
+    :target: http://badge.fury.io/py/django-sitemetrics
+
 .. image:: https://pypip.in/d/django-sitemetrics/badge.png
         :target: https://crate.io/packages/django-sitemetrics
 
@@ -67,8 +70,3 @@ Documentation
 -------------
 
 http://django-sitemetrics.readthedocs.org/
-
-
-
-.. image:: https://d2weczhvl823v0.cloudfront.net/idlesign/django-sitemetrics/trend.png
-        :target: https://bitdeli.com/free

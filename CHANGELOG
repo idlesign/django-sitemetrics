@@ -1,3 +1,6 @@
+django-sitemetrics changelog
+============================
+
 v0.4.2
 ------
 * Fixed `kcode_data is not a dict` error (see #3).
