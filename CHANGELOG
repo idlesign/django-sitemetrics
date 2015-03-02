@@ -1,6 +1,11 @@
 django-sitemetrics changelog
 ============================
 
+Unreleased
+----------
+* IMPORTANT: Google Analytics JS code is switched to Universal Analytics.
+
+
 v0.4.2
 ------
 * Fixed `kcode_data is not a dict` error (see #3).
