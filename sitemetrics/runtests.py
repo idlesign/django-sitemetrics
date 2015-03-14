@@ -5,15 +5,14 @@ import os
 from django.conf import settings, global_settings
 
 
-APP_NAME = 'sitemetrics'
-
-
 def main():
-    sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
+    current_dir = os.path.dirname(__file__)
+    app_name = os.path.basename(current_dir)
+    sys.path.insert(0, os.path.join(current_dir, '..'))
 
     if not settings.configured:
         settings.configure(
-            INSTALLED_APPS=( 'django.contrib.sites', APP_NAME),
+            INSTALLED_APPS=('django.contrib.sites', app_name),
             DATABASES={'default': {'ENGINE': 'django.db.backends.sqlite3'}},
             MIDDLEWARE_CLASSES=global_settings.MIDDLEWARE_CLASSES,  # Prevents Django 1.7 warning.
         )
@@ -26,7 +25,7 @@ def main():
 
     from django.test.utils import get_runner
     runner = get_runner(settings)()
-    failures = runner.run_tests((APP_NAME,))
+    failures = runner.run_tests((app_name,))
 
     sys.exit(failures)
 

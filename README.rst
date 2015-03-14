@@ -8,6 +8,15 @@ http://github.com/idlesign/django-sitemetrics
 .. image:: https://pypip.in/d/django-sitemetrics/badge.png
         :target: https://crate.io/packages/django-sitemetrics
 
+.. image:: https://coveralls.io/repos/idlesign/django-sitemetrics/badge.png
+    :target: https://coveralls.io/r/idlesign/django-sitemetrics
+
+.. image:: https://travis-ci.org/idlesign/django-sitemetrics.svg?branch=master
+    :target: https://travis-ci.org/idlesign/django-sitemetrics
+
+.. image:: https://landscape.io/github/idlesign/django-sitemetrics/master/landscape.svg?style=plastic
+   :target: https://landscape.io/github/idlesign/django-sitemetrics/master
+
 
 What's that
 -----------

@@ -54,9 +54,13 @@ def sitemetrics(parser, token):
         if tokens[1] == 'by' and tokens[3] == 'for':
             kcodes = [{'provider': tokens[2], 'keycode': tokens[4].strip('"')}]
         else:
-            raise template.TemplateSyntaxError('Four arguments `sitemetrics` tag notation should look like {%% sitemetrics by yandex for "138500" %%}.')
+            raise template.TemplateSyntaxError(
+                'Four arguments `sitemetrics` tag notation should look like '
+                '{%% sitemetrics by yandex for "138500" %%}.')
     else:
-        raise template.TemplateSyntaxError('`sitemetrics` tag requires four or no arguments. E.g. {%% sitemetrics by yandex for "138500" %%} or {%% sitemetrics %%}.')
+        raise template.TemplateSyntaxError(
+            '`sitemetrics` tag requires four or no arguments. '
+            'E.g. {%% sitemetrics by yandex for "138500" %%} or {%% sitemetrics %%}.')
 
     _kcodes = []
     for kcode_data in kcodes:
