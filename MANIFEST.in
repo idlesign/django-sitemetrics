@@ -8,7 +8,7 @@ recursive-include docs .rst
 recursive-include docs .py
 
 recursive-include sitemetrics/locale *
-recursive-include sitetree/migrations .py
-recursive-include sitetree/south_migrations .py
+recursive-include sitemetrics/migrations .py
+recursive-include sitemetrics/south_migrations .py
 recursive-include sitemetrics/templates *
 recursive-include sitemetrics/templatetags *
