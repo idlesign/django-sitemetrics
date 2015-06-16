@@ -1,4 +1,1 @@
-VERSION = (0, 4, 2)
-
-# TODO api docs
-# TODO tests
+VERSION = (0, 5, 0)

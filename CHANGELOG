@@ -1,8 +1,8 @@
 django-sitemetrics changelog
 ============================
 
-Unreleased
-----------
+v0.5.0
+------
 * IMPORTANT: Google Analytics JS code is switched to Universal Analytics.
 * IMPORTANT: Added migrations. South users should use `migrate sitemetrics --fake` (see #7).
 * Fixed cache invalidation issue.
