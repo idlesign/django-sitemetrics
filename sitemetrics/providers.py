@@ -6,6 +6,12 @@ from django.utils.importlib import import_module
 class MetricsProvider(object):
     """Base class for metrics providers."""
 
+    alias = 'generic'
+    title = 'Generic Provider'
+
+    # This can be a dictionary with metrics counter parameters.
+    # Those parameters will be passed into counter template file -
+    # templates/sitemetrics/{alias}.html (where `alias` is a provider alias, see above).
     params = None
 
     @classmethod
