@@ -12,8 +12,8 @@ from ..utils import get_providers_by_alias
 CACHE_TIMEOUT = 31536000
 PROVIDERS_BY_ALIAS = get_providers_by_alias()
 
-signals.post_save.connect(lambda **kwargs: cache.delete('sitemetrics'), sender=Keycode)
-signals.post_delete.connect(lambda **kwargs: cache.delete('sitemetrics'), sender=Keycode)
+signals.post_save.connect(lambda **kwargs: cache.delete('sitemetrics'), sender=Keycode, weak=False)
+signals.post_delete.connect(lambda **kwargs: cache.delete('sitemetrics'), sender=Keycode, weak=False)
 
 register = template.Library()
 
