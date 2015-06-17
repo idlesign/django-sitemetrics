@@ -2,20 +2,24 @@ django-sitemetrics
 ==================
 http://github.com/idlesign/django-sitemetrics
 
-.. image:: https://badge.fury.io/py/django-sitemetrics.png
-    :target: http://badge.fury.io/py/django-sitemetrics
 
-.. image:: https://pypip.in/d/django-sitemetrics/badge.png
-        :target: https://crate.io/packages/django-sitemetrics
+.. image:: https://img.shields.io/pypi/v/django-sitemetrics.svg
+    :target: https://pypi.python.org/pypi/django-sitemetrics
 
-.. image:: https://coveralls.io/repos/idlesign/django-sitemetrics/badge.png
+.. image:: https://img.shields.io/pypi/dm/django-sitemetrics.svg
+    :target: https://pypi.python.org/pypi/django-sitemetrics
+
+.. image:: https://img.shields.io/pypi/l/django-sitemetrics.svg
+    :target: https://pypi.python.org/pypi/django-sitemetrics
+
+.. image:: https://img.shields.io/coveralls/idlesign/django-sitemetrics/master.svg
     :target: https://coveralls.io/r/idlesign/django-sitemetrics
 
-.. image:: https://travis-ci.org/idlesign/django-sitemetrics.svg?branch=master
+.. image:: https://img.shields.io/travis/idlesign/django-sitemetrics/master.svg
     :target: https://travis-ci.org/idlesign/django-sitemetrics
 
-.. image:: https://landscape.io/github/idlesign/django-sitemetrics/master/landscape.svg?style=plastic
-   :target: https://landscape.io/github/idlesign/django-sitemetrics/master
+.. image:: https://img.shields.io/codeclimate/github/idlesign/django-sitemetrics.svg
+   :target: https://codeclimate.com/github/idlesign/django-sitemetrics
 
 
 What's that
