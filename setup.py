@@ -10,14 +10,19 @@ f.close()
 setup(
     name='django-sitemetrics',
     version='.'.join(map(str, VERSION)),
+    url='http://github.com/idlesign/django-sitemetrics',
+
     description='Reusable application for Django providing easy means to integrate site metrics counters into your sites',
     long_description=readme,
-    author="Igor 'idle sign' Starikov",
+    license='BSD 3-Clause License',
+
+    author='Igor `idle sign` Starikov',
     author_email='idlesign@yandex.ru',
-    url='http://github.com/idlesign/django-sitemetrics',
+
     packages=['sitemetrics'],
     include_package_data=True,
     zip_safe=False,
+
     classifiers=[
         'Development Status :: 4 - Beta',
         'Environment :: Web Environment',
@@ -30,5 +35,6 @@ setup(
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.3',
+        'Programming Language :: Python :: 3.4',
     ],
 )
