@@ -32,11 +32,11 @@ Reusable application for Django providing easy means to integrate site metrics c
 Built-in site metrics providers
 -------------------------------
 
-1. **Yandex Metrika** — http://metrika.yandex.ru/
+1. **Yandex Metrika** - http://metrika.yandex.ru/
 
     Provider alias: `yandex`
 
-2. **Google Analytics** — http://www.google.com/analytics/
+2. **Google Analytics** - http://www.google.com/analytics/
 
     Provider alias: `google`
 
