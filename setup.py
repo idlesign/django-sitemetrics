@@ -1,11 +1,14 @@
 import os
-import codecs
+import io
 from setuptools import setup
+
 from sitemetrics import VERSION
 
+
 def read(*parts):
-    file_path = os.path.join(os.path.dirname(__file__), *parts)
-    return codecs.open(file_path, encoding='utf-8').read()
+    with io.open(os.path.join(os.path.dirname(__file__), *parts)) as f:
+        return f.read()
+
 
 setup(
     name='django-sitemetrics',
@@ -36,5 +39,6 @@ setup(
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3.5',
     ],
 )

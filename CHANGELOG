@@ -1,6 +1,12 @@
 django-sitemetrics changelog
 ============================
 
+
+Unreleased
+----------
+* Fixed "UnicodeDecodeError: 'ascii' codec..." in setup.py
+
+
 v0.5.0
 ------
 * IMPORTANT: Google Analytics JS code is switched to Universal Analytics.
