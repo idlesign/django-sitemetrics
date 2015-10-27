@@ -2,7 +2,7 @@ django-sitemetrics changelog
 ============================
 
 
-Unreleased
+v0.5.1
 ----------
 * Fixed "UnicodeDecodeError: 'ascii' codec..." in setup.py
 
