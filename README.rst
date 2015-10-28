@@ -52,9 +52,9 @@ Then you have two options to add metrics counter code to your page:
 
 * Use `four arguments` sitemetrics tag notation:
 
-  ::
+  .. code-block:: html+django
 
-  {% sitemetrics by google for "UA-000000-0" %}
+        {% sitemetrics by google for "UA-000000-0" %}
 
 
   Here: `google` is a metrics provider alias; `UA-000000-0` - metrics counter keycode.
@@ -64,9 +64,9 @@ Then you have two options to add metrics counter code to your page:
 
 * Use `no arguments` sitemetrics tag notation:
 
-  ::
+  .. code-block:: html+django
 
-  {% sitemetrics %}
+        {% sitemetrics %}
 
 
   That is how you put all counter codes registered and active for the current site.
