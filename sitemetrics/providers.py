@@ -1,6 +1,11 @@
 from django.conf import settings
 from django.utils.translation import ugettext_lazy as _
-from django.utils.importlib import import_module
+
+try:
+    from django.utils.module_loading import import_module
+except ImportError:
+    # Django <=1.9.0
+    from django.utils.importlib import import_module
 
 
 class MetricsProvider(object):
