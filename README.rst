@@ -18,8 +18,8 @@ http://github.com/idlesign/django-sitemetrics
 .. image:: https://img.shields.io/travis/idlesign/django-sitemetrics/master.svg
     :target: https://travis-ci.org/idlesign/django-sitemetrics
 
-.. image:: https://img.shields.io/codeclimate/github/idlesign/django-sitemetrics.svg
-   :target: https://codeclimate.com/github/idlesign/django-sitemetrics
+.. image:: image:: https://landscape.io/github/idlesign/django-sitemetrics/master/landscape.svg?style=flat
+   :target: https://landscape.io/github/idlesign/django-sitemetrics/master
 
 
 What's that
