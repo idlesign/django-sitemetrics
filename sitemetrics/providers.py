@@ -48,6 +48,19 @@ class Yandex(MetricsProvider):
     }
 
 
+class Openstat(MetricsProvider):
+    """Openstat - https://www.openstat.com/"""
+
+    alias = 'openstat'
+    title = _('Openstat')
+
+    params = {
+        'image': None,
+        'color': None,
+        'next': 'openstat',
+    }
+
+
 class Google(MetricsProvider):
     """Google Analytics - http://www.google.com/analytics/"""
 
@@ -72,5 +85,5 @@ def get_custom_providers():
     return p_clss
 
 
-BUILTIN_PROVIDERS = (Yandex, Google)
+BUILTIN_PROVIDERS = (Yandex, Google, Openstat)
 METRICS_PROVIDERS = get_custom_providers() or BUILTIN_PROVIDERS
