@@ -40,6 +40,9 @@ Built-in site metrics providers
 
     Provider alias: `google`
 
+3. **Openstat** - https://www.openstat.com/
+
+    Provider alias: `openstat`
 
 
 How to use
