@@ -2,6 +2,7 @@ Getting started
 ===============
 
 * Add the **sitemetrics** application to INSTALLED_APPS in your settings file (usually 'settings.py').
+* Add `core.context_processors.request` to TEMPLATE_CONTEXT_PROCESSORS if you are going to use SITEMETRICS_SITE_BY_REQUEST option
 * Add `{% load sitemetrics %}` tag to the top of a template (usually base template, e.g. `_base.html`).
 * Use **./manage.py syncdb** to install sitemetrics tables into your database.
 
