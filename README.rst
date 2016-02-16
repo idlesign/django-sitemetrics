@@ -49,7 +49,9 @@ How to use
 ----------
 
 1. Add the `sitemetrics` application to `INSTALLED_APPS` in your settings file (usually `settings.py`)
-2. Add `{% load sitemetrics %}` tag to the top of a template (usually base template, e.g. `_base.html`)
+2. Add `core.context_processors.request` to TEMPLATE_CONTEXT_PROCESSORS if you are going to use SITEMETRICS_SITE_BY_REQUEST option
+3. Add `{% load sitemetrics %}` tag to the top of a template (usually base template, e.g. `_base.html`)
+
 
 Then you have two options to add metrics counter code to your page:
 
