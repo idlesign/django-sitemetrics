@@ -28,3 +28,8 @@ You have two options to add metrics counters code to your pages:
 
 You're done.
 
+
+.. note:: Since v0.6.0 counter code in DEBUG mode is replaced with
+   ``<!-- sitemetrics counter removed on DEBUG -->`` to keep stats clean.
+   If you wish to see counter code in DEBUG set `SITEMETRICS_ON_DEBUG` to `True` in project settings file.
+
