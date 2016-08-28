@@ -6,12 +6,9 @@ from django.contrib.sites.models import Site
 
 from ..models import Keycode
 from ..utils import get_providers_by_alias
-from ..settings import ON_DEBUG
+from ..settings import ON_DEBUG, CACHE_TIMEOUT
 
 
-# sitemetrics keykodes are stored in Django cache for a year (60 * 60 * 24 * 365 = 31536000 sec).
-# Cache is only invalidated on sitemetrics keycode change.
-CACHE_TIMEOUT = 31536000
 PROVIDERS_BY_ALIAS = get_providers_by_alias()
 DEBUG = settings.DEBUG
 
