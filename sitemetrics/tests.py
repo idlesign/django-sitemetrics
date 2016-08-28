@@ -1,8 +1,7 @@
 """This file contains tests for sitemetrics."""
-from django.test import TestCase
+from django.test import TestCase, override_settings
 from django.template.base import Template, TemplateSyntaxError
 from django.template.context import Context
-from django.test.utils import override_settings
 from django.contrib.sites.models import Site
 
 from sitemetrics.providers import MetricsProvider, get_custom_providers, Yandex
@@ -34,6 +33,7 @@ class UtilsTest(TestCase):
         for alias, p_cls in by_alias.items():
             self.assertTrue(issubclass(p_cls, MetricsProvider))
 
+
 class ProvidersTest(TestCase):
 
     @override_settings(SITEMETRICS_PROVIDERS = ('sitemetrics.tests.CustomizedProvider',))
@@ -41,6 +41,20 @@ class ProvidersTest(TestCase):
         providers = get_custom_providers()
         self.assertEqual(len(providers), 1)
         self.assertEqual(providers[0].get_params(), CustomizedProvider.params)
+
+
+class TemplateTagsDummyTest(TestCase):
+
+    def test_on_debug(self):
+        with self.settings(DEBUG=True):
+            tpl = '{% load sitemetrics %}{% sitemetrics by yandex for "138500" %}'
+            self.assertIn('counter removed', render_string(tpl))
+
+    @override_settings(DEBUG=True, SITEMETRICS_ON_DEBUG=True)
+    def test_on_debug(self):
+        tpl = '{% load sitemetrics %}{% sitemetrics by yandex for "138500" %}'
+        self.assertIn('138500', render_string(tpl))
+
 
 class TemplateTagsTest(TestCase):
 
