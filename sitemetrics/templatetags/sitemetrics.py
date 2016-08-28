@@ -1,16 +1,19 @@
 from django import template
+from django.conf import settings
 from django.core.cache import cache
 from django.db.models import signals
 from django.contrib.sites.models import Site
 
 from ..models import Keycode
 from ..utils import get_providers_by_alias
+from ..settings import ON_DEBUG
 
 
 # sitemetrics keykodes are stored in Django cache for a year (60 * 60 * 24 * 365 = 31536000 sec).
 # Cache is only invalidated on sitemetrics keycode change.
 CACHE_TIMEOUT = 31536000
 PROVIDERS_BY_ALIAS = get_providers_by_alias()
+DEBUG = settings.DEBUG
 
 signals.post_save.connect(lambda **kwargs: cache.delete('sitemetrics'), sender=Keycode, weak=False)
 signals.post_delete.connect(lambda **kwargs: cache.delete('sitemetrics'), sender=Keycode, weak=False)
@@ -35,6 +38,9 @@ def sitemetrics(parser, token):
            This is a simple template tag with no special requirements.
     
     """
+    if DEBUG and not ON_DEBUG:
+        return sitemetricsDummyNode()
+
     tokens = token.split_contents()
     tokens_num = len(tokens)
 
@@ -72,6 +78,13 @@ def sitemetrics(parser, token):
             _kcodes.append(kcode_data)
 
     return sitemetricsNode(_kcodes)
+
+
+class sitemetricsDummyNode(template.Node):
+    """Dummy node used on DEBUG to keep stats clean."""
+
+    def render(self, context):
+        return '<!-- sitemetrics counter removed on DEBUG -->'
 
 
 class sitemetricsNode(template.Node):
