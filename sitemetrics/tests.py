@@ -1,5 +1,6 @@
 """This file contains tests for sitemetrics."""
-from django.test import TestCase, override_settings
+from django.test import TestCase
+from django.test.utils import override_settings
 from django.template.base import Template, TemplateSyntaxError
 from django.template.context import Context
 from django.contrib.sites.models import Site
