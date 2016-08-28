@@ -2,10 +2,11 @@ django-sitemetrics changelog
 ============================
 
 
-Unreleased
-----------
+v0.6.0
+------
 + Implemented Openstat counter.
 + IMPORTANT: Added `SITEMETRICS_ON_DEBUG` setting. Default: False.
+* Django 1.10 compatibility ensured.
 
 
 v0.5.2
