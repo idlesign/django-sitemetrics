@@ -93,7 +93,7 @@ class sitemetricsNode(template.Node):
         self.template = template.loader.get_template('sitemetrics/sitemetrics.tpl')
 
     def render(self, context):
-        context = template.Context({'keycodes': self.keycodes})
-        if django.VERSION >= (1, 8):
-            context = context.flatten()
+        context = {'keycodes': self.keycodes}
+        if django.VERSION < (1, 8):
+            context = template.Context(context)
         return self.template.render(context)
