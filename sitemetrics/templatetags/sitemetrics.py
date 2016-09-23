@@ -12,6 +12,7 @@ from ..settings import ON_DEBUG, CACHE_TIMEOUT
 
 PROVIDERS_BY_ALIAS = get_providers_by_alias()
 DEBUG = settings.DEBUG
+DJANGO_PRE_18 = django.VERSION < (1, 8)
 
 signals.post_save.connect(lambda **kwargs: cache.delete('sitemetrics'), sender=Keycode, weak=False)
 signals.post_delete.connect(lambda **kwargs: cache.delete('sitemetrics'), sender=Keycode, weak=False)
@@ -94,6 +95,6 @@ class sitemetricsNode(template.Node):
 
     def render(self, context):
         context = {'keycodes': self.keycodes}
-        if django.VERSION < (1, 8):
+        if DJANGO_PRE_18:
             context = template.Context(context)
         return self.template.render(context)
