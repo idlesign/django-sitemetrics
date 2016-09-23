@@ -1,3 +1,4 @@
+import django
 from django import template
 from django.conf import settings
 from django.core.cache import cache
@@ -92,4 +93,7 @@ class sitemetricsNode(template.Node):
         self.template = template.loader.get_template('sitemetrics/sitemetrics.tpl')
 
     def render(self, context):
-        return self.template.render(template.Context({'keycodes': self.keycodes}))
+        context = {'keycodes': self.keycodes}
+        if django.VERSION < (1, 8):
+            context = template.Context(context)
+        return self.template.render(context)
