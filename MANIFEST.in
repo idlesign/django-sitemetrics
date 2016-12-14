@@ -4,11 +4,11 @@ include CHANGELOG
 include AUTHORS
 
 include docs/Makefile
-recursive-include docs .rst
-recursive-include docs .py
+recursive-include docs *.rst
+recursive-include docs *.py
 
 recursive-include sitemetrics/locale *
-recursive-include sitemetrics/migrations .py
-recursive-include sitemetrics/south_migrations .py
+recursive-include sitemetrics/migrations *.py
+recursive-include sitemetrics/south_migrations *.py
 recursive-include sitemetrics/templates *
 recursive-include sitemetrics/templatetags *
