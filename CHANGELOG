@@ -4,6 +4,7 @@ django-sitemetrics changelog
 
 Unreleased
 ----------
+* Package distribution fix.
 * RemovedInDjango110Warning silenced.
 
 
