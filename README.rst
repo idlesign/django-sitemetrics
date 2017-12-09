@@ -6,9 +6,6 @@ http://github.com/idlesign/django-sitemetrics
 .. image:: https://img.shields.io/pypi/v/django-sitemetrics.svg
     :target: https://pypi.python.org/pypi/django-sitemetrics
 
-.. image:: https://img.shields.io/pypi/dm/django-sitemetrics.svg
-    :target: https://pypi.python.org/pypi/django-sitemetrics
-
 .. image:: https://img.shields.io/pypi/l/django-sitemetrics.svg
     :target: https://pypi.python.org/pypi/django-sitemetrics
 
