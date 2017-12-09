@@ -9,7 +9,9 @@ from .utils import get_provider_choices
 @python_2_unicode_compatible
 class Keycode(models.Model):
 
-    site = models.ForeignKey(Site, verbose_name=_('Site'), help_text=_('Site for which metrics keycode is registered.'))
+    site = models.ForeignKey(
+        Site, verbose_name=_('Site'), help_text=_('Site for which metrics keycode is registered.'),
+        on_delete=models.CASCADE)
 
     provider = models.CharField(
         _('Provider'), max_length=50, choices=get_provider_choices(),

@@ -14,8 +14,14 @@ def main():
         configure_kwargs = dict(
             INSTALLED_APPS=('django.contrib.sites', app_name),
             DATABASES={'default': {'ENGINE': 'django.db.backends.sqlite3'}},
-            MIDDLEWARE_CLASSES=global_settings.MIDDLEWARE_CLASSES,  # Prevents Django 1.7 warning.
         )
+
+
+        try:
+            configure_kwargs['MIDDLEWARE_CLASSES'] = global_settings.MIDDLEWARE_CLASSES  # Prevents Django 1.7 warning.
+
+        except AttributeError:
+            pass  # Since Django 2.0
 
         try:
             configure_kwargs['TEMPLATE_CONTEXT_PROCESSORS'] = tuple(global_settings.TEMPLATE_CONTEXT_PROCESSORS) + (
@@ -32,11 +38,8 @@ def main():
 
         settings.configure(**configure_kwargs)
 
-    try:  # Django 1.7 +
-        from django import setup
-        setup()
-    except ImportError:
-        pass
+    from django import setup
+    setup()
 
     from django.test.utils import get_runner
     runner = get_runner(settings)()

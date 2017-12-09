@@ -18,7 +18,7 @@ class Migration(migrations.Migration):
                 ('provider', models.CharField(max_length=50, verbose_name='Provider', choices=[('yandex', 'Yandex Metrika'), ('google', 'Google Analytics'), ('openstat', 'Openstat')], help_text='Metrics service provider name.')),
                 ('keycode', models.CharField(max_length=80, verbose_name='Keycode', help_text='Keycode or identifier given by metrics service provider for site(s).')),
                 ('active', models.BooleanField(default=True, verbose_name='Active', help_text='Whether this keycode is available to use.')),
-                ('site', models.ForeignKey(verbose_name='Site', help_text='Site for which metrics keycode is registered.', to='sites.Site')),
+                ('site', models.ForeignKey(verbose_name='Site', help_text='Site for which metrics keycode is registered.', to='sites.Site', on_delete=models.CASCADE)),
             ],
             options={
                 'verbose_name': 'Keycode',
