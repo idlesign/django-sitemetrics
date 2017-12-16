@@ -2,8 +2,8 @@ django-sitemetrics changelog
 ============================
 
 
-Unreleased
-----------
+v0.7.0
+------
 + Django 2.0 basic compatibility.
 * Dropped support for Python<3.4 and Django<1.7.
 
