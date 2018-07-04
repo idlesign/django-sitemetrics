@@ -1,17 +1,15 @@
 import django
 from django import template
 from django.conf import settings
+from django.contrib.sites.models import Site
 from django.core.cache import cache
 from django.db.models import signals
-from django.contrib.sites.models import Site
 
 from ..models import Keycode
-from ..utils import get_providers_by_alias
 from ..settings import ON_DEBUG, CACHE_TIMEOUT
-
+from ..utils import get_providers_by_alias
 
 PROVIDERS_BY_ALIAS = get_providers_by_alias()
-DEBUG = settings.DEBUG
 DJANGO_PRE_18 = django.VERSION < (1, 8)
 
 signals.post_save.connect(lambda **kwargs: cache.delete('sitemetrics'), sender=Keycode, weak=False)
@@ -37,7 +35,7 @@ def sitemetrics(parser, token):
            This is a simple template tag with no special requirements.
     
     """
-    if DEBUG and not ON_DEBUG:
+    if settings.DEBUG and not ON_DEBUG:
         return sitemetricsDummyNode()
 
     tokens = token.split_contents()

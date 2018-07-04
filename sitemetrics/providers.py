@@ -74,7 +74,7 @@ def get_custom_providers():
     providers = getattr(settings, 'SITEMETRICS_PROVIDERS', False)
 
     if not providers:
-        return None
+        return []
 
     p_clss = []
     for provider_path in providers:

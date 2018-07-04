@@ -1,3 +1,3 @@
 [run]
 include = sitemetrics/*
-omit = sitemetrics/migrations/*, sitemetrics/south_migrations/*, sitemetrics/runtests.py, sitemetrics/tests.py, sitemetrics/admin.py, sitemetrics/config.py
+omit = sitemetrics/migrations/*, sitemetrics/tests/*, sitemetrics/admin.py, sitemetrics/config.py
