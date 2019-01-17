@@ -44,11 +44,11 @@ setup(
     test_suite='tests',
     tests_require=[
         'pytest',
-        'pytest-djangoapp>=0.4.1',
+        'pytest-djangoapp>=0.9.0',
     ],
 
     classifiers=[
-        'Development Status :: 4 - Beta',
+        'Development Status :: 5 - Production/Stable',
         'Environment :: Web Environment',
         'Framework :: Django',
         'Intended Audience :: Developers',
