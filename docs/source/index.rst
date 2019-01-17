@@ -9,7 +9,7 @@ http://github.com/idlesign/django-sitemetrics
 Requirements
 ------------
 
-1. Python 2.7+ or 3.4+
+1. Python 2.7+ or 3.5+
 2. Django 1.7+
 3. Django Sites contrib enabled (optional)
 4. Django Admin contrib enabled (optional)
