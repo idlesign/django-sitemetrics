@@ -4,6 +4,7 @@ django-sitemetrics changelog
 
 Unreleased
 ----------
+! Dropped QA for Django 1.7.
 ! Dropped QA for Python 2.
 
 
