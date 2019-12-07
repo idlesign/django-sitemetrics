@@ -2,8 +2,8 @@ django-sitemetrics changelog
 ============================
 
 
-Unreleased
-----------
+v1.1.0 [2019-12-07]
+-------------------
 ! Dropped QA for Django 1.7.
 ! Dropped QA for Python 2.
 + Add Django 3.0 compatibility.
