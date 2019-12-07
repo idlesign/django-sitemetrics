@@ -1,12 +1,10 @@
 from django.db import models
 from django.contrib.sites.models import Site
 from django.utils.translation import ugettext_lazy as _
-from django.utils.encoding import python_2_unicode_compatible
 
 from .utils import get_provider_choices
 
 
-@python_2_unicode_compatible
 class Keycode(models.Model):
 
     site = models.ForeignKey(
