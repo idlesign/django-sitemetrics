@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.sites.models import Site
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from .utils import get_provider_choices
 
@@ -21,9 +21,9 @@ class Keycode(models.Model):
 
     active = models.BooleanField(_('Active'), default=True, help_text=_('Whether this keycode is available to use.'))
 
-    class Meta(object):
+    class Meta:
         verbose_name = _('Keycode')
         verbose_name_plural = _('Keycodes')
 
     def __str__(self):
-        return u'Keycode by %s: %s' % (self.provider, self.keycode)
+        return f'Keycode by {self.provider}: {self.keycode}'

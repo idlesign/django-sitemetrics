@@ -1,16 +1,15 @@
-import django
 from django import template
 from django.conf import settings
 from django.contrib.sites.models import Site
 from django.core.cache import cache
 from django.db.models import signals
+from django.template.base import Parser, Token
 
 from ..models import Keycode
 from ..settings import ON_DEBUG, CACHE_TIMEOUT
 from ..utils import get_providers_by_alias
 
 PROVIDERS_BY_ALIAS = get_providers_by_alias()
-DJANGO_PRE_18 = django.VERSION < (1, 8)
 
 signals.post_save.connect(lambda **kwargs: cache.delete('sitemetrics'), sender=Keycode, weak=False)
 signals.post_delete.connect(lambda **kwargs: cache.delete('sitemetrics'), sender=Keycode, weak=False)
@@ -19,7 +18,7 @@ register = template.Library()
 
 
 @register.tag
-def sitemetrics(parser, token):
+def sitemetrics(parser: Parser, token: Token):
     """Renders sitemetrics counter.
     
     Two notation types are possible:
@@ -92,7 +91,4 @@ class sitemetricsNode(template.Node):
         self.template = template.loader.get_template('sitemetrics/sitemetrics.tpl')
 
     def render(self, context):
-        context = {'keycodes': self.keycodes}
-        if DJANGO_PRE_18:
-            context = template.Context(context)
-        return self.template.render(context)
+        return self.template.render({'keycodes': self.keycodes})

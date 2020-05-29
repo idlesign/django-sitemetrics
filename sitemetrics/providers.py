@@ -1,31 +1,28 @@
+from typing import List, Type
+
 from django.conf import settings
-from django.utils.translation import ugettext_lazy as _
-
-try:
-    from django.utils.module_loading import import_module
-except ImportError:
-    # Django <=1.9.0
-    from django.utils.importlib import import_module
+from django.utils.module_loading import import_module
+from django.utils.translation import gettext_lazy as _
 
 
-class MetricsProvider(object):
+class MetricsProvider:
     """Base class for metrics providers."""
 
-    alias = 'generic'
-    title = 'Generic Provider'
+    alias: str = 'generic'
+    title: str = 'Generic Provider'
 
     # This can be a dictionary with metrics counter parameters.
     # Those parameters will be passed into counter template file -
     # templates/sitemetrics/{alias}.html (where `alias` is a provider alias, see above).
-    params = None
+    params: dict = None
 
     @classmethod
-    def get_template_name(cls):
+    def get_template_name(cls) -> str:
         """Returns js counter code template path."""
-        return 'sitemetrics/%s.html' % cls.alias
+        return f'sitemetrics/{cls.alias}.html'
 
     @classmethod
-    def get_params(cls):
+    def get_params(cls) -> dict:
         """Returns counter parameters dictionary."""
         return cls.params or {}
 
@@ -33,10 +30,10 @@ class MetricsProvider(object):
 class Yandex(MetricsProvider):
     """Yandex Metrika - http://metrika.yandex.ru/"""
 
-    alias = 'yandex'
-    title = _('Yandex Metrika')
+    alias: str = 'yandex'
+    title: str = _('Yandex Metrika')
 
-    params = {
+    params: dict = {
         'webvisor': True,
         'clickmap': True,
         'track_links': True,
@@ -51,10 +48,10 @@ class Yandex(MetricsProvider):
 class Openstat(MetricsProvider):
     """Openstat - https://www.openstat.com/"""
 
-    alias = 'openstat'
-    title = _('Openstat')
+    alias: str = 'openstat'
+    title: str = _('Openstat')
 
-    params = {
+    params: dict = {
         'image': None,
         'color': None,
         'next': 'openstat',
@@ -64,11 +61,11 @@ class Openstat(MetricsProvider):
 class Google(MetricsProvider):
     """Google Analytics - http://www.google.com/analytics/"""
 
-    alias = 'google'
-    title = _('Google Analytics')
+    alias: str = 'google'
+    title: str = _('Google Analytics')
 
 
-def get_custom_providers():
+def get_custom_providers() -> List[Type[MetricsProvider]]:
     """Imports providers classes by paths given in SITEMETRICS_PROVIDERS setting."""
 
     providers = getattr(settings, 'SITEMETRICS_PROVIDERS', False)
@@ -82,8 +79,14 @@ def get_custom_providers():
         mod = import_module('.'.join(path_splitted[:-1]))
         p_cls = getattr(mod, path_splitted[-1])
         p_clss.append(p_cls)
+
     return p_clss
 
 
-BUILTIN_PROVIDERS = (Yandex, Google, Openstat)
+BUILTIN_PROVIDERS = (
+    Yandex,
+    Google,
+    Openstat,
+)
+
 METRICS_PROVIDERS = get_custom_providers() or BUILTIN_PROVIDERS

@@ -9,7 +9,7 @@ from sitemetrics.utils import get_provider_choices, get_providers_by_alias
 from sitemetrics import settings as sm_settings
 
 
-class TestUtils(object):
+class TestUtils:
 
     def test_provider_choices(self):
         choices = get_provider_choices()
@@ -28,7 +28,7 @@ class TestUtils(object):
             assert issubclass(p_cls, MetricsProvider)
 
 
-class TestProviders(object):
+class TestProviders:
 
     def test_customized(self):
         from .testapp.providers import CustomizedProvider
@@ -38,7 +38,7 @@ class TestProviders(object):
         assert providers[0].get_params() == CustomizedProvider.params
 
 
-class TestTemplateTagsDummy(object):
+class TestTemplateTagsDummy:
 
     def test_counter_removed(self, settings, template_render_tag):
         settings.DEBUG = True
@@ -49,7 +49,7 @@ class TestTemplateTagsDummy(object):
         assert '138500' in template_render_tag('sitemetrics', 'sitemetrics by yandex for "138500"')
 
 
-class TestTemplateTags(object):
+class TestTemplateTags:
 
     def test_simple(self, template_render_tag):
         assert '138500' in template_render_tag('sitemetrics', 'sitemetrics by yandex for "138500"')
