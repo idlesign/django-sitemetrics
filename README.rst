@@ -11,9 +11,6 @@ http://github.com/idlesign/django-sitemetrics
 .. image:: https://img.shields.io/coveralls/idlesign/django-sitemetrics/master.svg
     :target: https://coveralls.io/r/idlesign/django-sitemetrics
 
-.. image:: https://img.shields.io/travis/idlesign/django-sitemetrics/master.svg
-    :target: https://travis-ci.org/idlesign/django-sitemetrics
-
 
 What's that
 -----------
