@@ -1,93 +1,66 @@
-django-sitemetrics changelog
-============================
+# django-sitemetrics changelog
 
+### Unreleased
+* ** Pinned default_auto_field to AutoField to prevent id field drift on Django 6.1.
+* ** Provider choices are no longer computed from SITEMETRICS_PROVIDERS at model level (fixes migration drift with custom providers).
 
-v1.2.0 [2020-05-29]
--------------------
-! Dropped support for Django<2.0.
-! Dropped support for Python 2 and 3.5.
+### v1.2.0 [2020-05-29]
+* !! Dropped support for Django<2.0.
+* !! Dropped support for Python 2 and 3.5.
 
+### v1.1.0 [2019-12-07]
+* !! Dropped QA for Django 1.7.
+* !! Dropped QA for Python 2.
+* ++ Add Django 3.0 compatibility.
 
-v1.1.0 [2019-12-07]
--------------------
-! Dropped QA for Django 1.7.
-! Dropped QA for Python 2.
-+ Add Django 3.0 compatibility.
+### v1.0.0
+* !! Dropped QA for Python 3.4.
+* ** No functional changes. Celebrating 1.0.0.
 
+### v0.7.0
+* ++ Django 2.0 basic compatibility.
+* ** Dropped support for Python<3.4 and Django<1.7.
 
-v1.0.0
-------
-! Dropped QA for Python 3.4.
-* No functional changes. Celebrating 1.0.0.
+### v0.6.1
+* ** Package distribution fix.
+* ** RemovedInDjango110Warning silenced.
 
+### v0.6.0
+* ++ Implemented Openstat counter.
+* ++ IMPORTANT: Added `SITEMETRICS_ON_DEBUG` setting. Default: False.
+* ** Django 1.10 compatibility ensured.
 
-v0.7.0
-------
-+ Django 2.0 basic compatibility.
-* Dropped support for Python<3.4 and Django<1.7.
+### v0.5.2
+* ** Django 1.9 compatibility improvements.
 
+### v0.5.1
+* ** Fixed "UnicodeDecodeError: 'ascii' codec..." in setup.py
 
-v0.6.1
-------
-* Package distribution fix.
-* RemovedInDjango110Warning silenced.
+### v0.5.0
+* ** IMPORTANT: Google Analytics JS code is switched to Universal Analytics.
+* ** IMPORTANT: Added migrations. South users should use `migrate sitemetrics --fake` (see #7).
+* ** Fixed cache invalidation issue.
 
+### v0.4.2
+* ** Fixed `kcode_data is not a dict` error (see #3).
+* ** Updated Google Analytics counter code (closes #4).
 
-v0.6.0
-------
-+ Implemented Openstat counter.
-+ IMPORTANT: Added `SITEMETRICS_ON_DEBUG` setting. Default: False.
-* Django 1.10 compatibility ensured.
+### v0.4.1
+* ** Fixed setup.py PIP related issue (see #2).
 
+### v0.4.0
+* ++ Remastered API.
+* ++ Added parameterization support for metrics counters.
+* ++ Implemented all known parameters for Yandex Metrika.
+* ** Now uses built-in Django Cache framework.
 
-v0.5.2
-----------
-* Django 1.9 compatibility improvements.
+### v0.3.0
+* ++ Added non-blocking js for Yandex Metrika.
 
+### v0.2.0
+* ++ Added pypi support.
+* ++ Added keycodes caching.
+* ++ Added click map and external links tracking functionality for Yandex Metrika.
 
-v0.5.1
-----------
-* Fixed "UnicodeDecodeError: 'ascii' codec..." in setup.py
-
-
-v0.5.0
-------
-* IMPORTANT: Google Analytics JS code is switched to Universal Analytics.
-* IMPORTANT: Added migrations. South users should use `migrate sitemetrics --fake` (see #7).
-* Fixed cache invalidation issue.
-
-
-v0.4.2
-------
-* Fixed `kcode_data is not a dict` error (see #3).
-* Updated Google Analytics counter code (closes #4).
-
-
-v0.4.1
-------
-* Fixed setup.py PIP related issue (see #2).
-
-
-v0.4.0
-------
-+ Remastered API.
-+ Added parameterization support for metrics counters.
-+ Implemented all known parameters for Yandex Metrika.
-* Now uses built-in Django Cache framework.
-
-
-v0.3.0
-------
-+ Added non-blocking js for Yandex Metrika.
-
-
-v0.2.0
-------
-+ Added pypi support.
-+ Added keycodes caching.
-+ Added click map and external links tracking functionality for Yandex Metrika.
-
-
-v0.1.0
-------
-+ Basic functionality.
+### v0.1.0
+* ++ Basic functionality.

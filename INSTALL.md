@@ -1,31 +1,25 @@
-django-sitemetrics installation
-===============================
+# django-sitemetrics installation
 
+Python `pip` package is required to install `django-sitemetrics`.
 
-Python ``pip`` package is required to install ``django-sitemetrics``.
+## From sources
 
+Use the following command line to install `django-sitemetrics` from sources directory (containing `pyproject.toml`):
 
-From sources
-------------
+```shell
+pip install .
+```
 
-Use the following command line to install ``django-sitemetrics`` from sources directory (containing setup.py):
+## From PyPI
 
-    pip install .
+Alternatively you can install `django-sitemetrics` from PyPI:
 
-or
-
-    python setup.py install
-
-
-From PyPI
----------
-
-Alternatively you can install ``django-sitemetrics`` from PyPI:
-
-    pip install django-sitemetrics
-
+```shell
+pip install django-sitemetrics
+```
 
 Use `-U` flag for upgrade:
 
-    pip install -U django-sitemetrics
-
+```shell
+pip install -U django-sitemetrics
+```

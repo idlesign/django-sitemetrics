@@ -24,7 +24,7 @@ class TestUtils:
         assert len(by_alias) > 0
         assert isinstance(by_alias, dict)
         
-        for alias, p_cls in by_alias.items():
+        for p_cls in by_alias.values():
             assert issubclass(p_cls, MetricsProvider)
 
 
@@ -73,8 +73,6 @@ class TestTemplateTags:
         site_two_code.save()
 
         assert '222' in '%s' % site_two_code
-
-        tpl = '{% load sitemetrics %}{% sitemetrics %}'
 
         settings.SITE_ID = 1
 

@@ -2,8 +2,6 @@ from django.db import models
 from django.contrib.sites.models import Site
 from django.utils.translation import gettext_lazy as _
 
-from .utils import get_provider_choices
-
 
 class Keycode(models.Model):
 
@@ -12,7 +10,7 @@ class Keycode(models.Model):
         on_delete=models.CASCADE)
 
     provider = models.CharField(
-        _('Provider'), max_length=50, choices=get_provider_choices(),
+        _('Provider'), max_length=50,
         help_text=_('Metrics service provider name.'))
 
     keycode = models.CharField(

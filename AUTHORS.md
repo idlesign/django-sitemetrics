@@ -1,21 +1,16 @@
-django-sitemetrics Authors
-==========================
+# django-sitemetrics authors
 
-Created by Igor 'idle sign' Starikov.
+Created by Igor `idle sign` Starikov.
 
+## Contributors
 
-Contributors
-------------
+* andresriancho <https://github.com/andresriancho>
+* Dmitry Slepichev <https://github.com/slepa>
+* Jeans Real <https://github.com/JeansReal>
+* Basil Shubin <https://github.com/bashu>
+* Denis Borisov <https://github.com/dborisov>
+* Sergey Zherevchuk <https://github.com/pacahon>
 
-andresriancho <https://github.com/andresriancho>
-Dmitry Slepichev <https://github.com/slepa>
-Jeans Real <https://github.com/JeansReal>
-Basil Shubin <https://github.com/bashu>
-Denis Borisov <https://github.com/dborisov>
-Sergey Zherevchuk <https://github.com/pacahon>
+## Translators
 
-
-Translators
------------
-
-Russian: Igor Starikov <https://www.transifex.com/accounts/profile/idlesign/>
+* Russian: Igor Starikov <https://www.transifex.com/accounts/profile/idlesign/>

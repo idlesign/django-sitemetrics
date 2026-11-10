@@ -8,10 +8,7 @@ def get_provider_choices() -> List[Tuple[str, str]]:
     suitable for use as model fields choices.
 
     """
-    choices = []
-
-    for provider in METRICS_PROVIDERS:
-        choices.append((provider.alias, provider.title))
+    choices = [(provider.alias, provider.title) for provider in METRICS_PROVIDERS]
 
     return choices
 
