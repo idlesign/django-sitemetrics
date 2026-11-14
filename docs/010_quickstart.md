@@ -31,3 +31,8 @@ You're done.
     Since v0.6.0 counter code in DEBUG mode is replaced with
     `<!-- sitemetrics counter removed on DEBUG -->` to keep stats clean.
     If you wish to see counter code in DEBUG set `SITEMETRICS_ON_DEBUG` to `True` in project settings file.
+
+!!! note
+
+    For multisite setups sharing one Django instance set `SITEMETRICS_SITE_BY_REQUEST` to `True`:
+    the current site will then be detected from the request's domain (Host header) instead of `SITE_ID`.

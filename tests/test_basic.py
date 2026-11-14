@@ -92,3 +92,33 @@ class TestTemplateTags:
         settings.SITE_ID = 2
 
         assert '222' in render()
+
+
+class TestSiteByRequest:
+
+    def test_site_by_request(self, settings, template_render_tag):
+        from django.template import Context
+        from django.test import RequestFactory
+
+        from sitemetrics import settings as sm_settings
+
+        sm_settings.SITE_BY_REQUEST = True
+        settings.ALLOWED_HOSTS = ["some.com", "example.com"]
+
+        site_two = Site(domain="some.com", name="some.com")
+        site_two.save()
+
+        Keycode(site=site_two, provider="yandex", keycode="222", active=True).save()
+
+        factory = RequestFactory()
+
+        def render_host(host):
+            request = factory.get("/", HTTP_HOST=host)
+            return template_render_tag('sitemetrics', 'sitemetrics', Context({"request": request}))
+
+        try:
+            assert "222" in render_host("some.com")
+            assert "222" not in render_host("example.com")
+
+        finally:
+            sm_settings.SITE_BY_REQUEST = False
