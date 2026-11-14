@@ -121,7 +121,7 @@ class sitemetricsDummyNode(template.Node):
 class sitemetricsNode(template.Node):
     """Renders specified site metrics counter from template."""
 
-    def __init__(self, keycodes, by_request=False):
+    def __init__(self, keycodes, *, by_request=False):
         self.keycodes = keycodes
         self.by_request = by_request
         self.template = template.loader.get_template('sitemetrics/sitemetrics.tpl')
