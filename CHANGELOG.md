@@ -1,6 +1,6 @@
 # django-sitemetrics changelog
 
-### Unreleased
+### v1.3.0 [2026-11-14]
 * ++ Added SITEMETRICS_SITE_BY_REQUEST setting to detect the current site from the request's domain instead of SITE_ID, for multisite setups sharing one Django instance (close #14).
 * ** Pinned default_auto_field to AutoField to prevent id field drift on Django 6.1.
 * ** Provider choices are no longer computed from SITEMETRICS_PROVIDERS at model level (fixes migration drift with custom providers).
