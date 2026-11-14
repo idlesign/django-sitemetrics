@@ -1,7 +1,9 @@
 import pytest
 
 from django.contrib.sites.models import Site
+from django.template import Context
 from django.template.base import TemplateSyntaxError
+from django.test import RequestFactory
 
 from sitemetrics.models import Keycode
 from sitemetrics.providers import MetricsProvider, get_custom_providers
@@ -97,11 +99,6 @@ class TestTemplateTags:
 class TestSiteByRequest:
 
     def test_site_by_request(self, settings, template_render_tag):
-        from django.template import Context
-        from django.test import RequestFactory
-
-        from sitemetrics import settings as sm_settings
-
         sm_settings.SITE_BY_REQUEST = True
         settings.ALLOWED_HOSTS = ["some.com", "example.com"]
 
